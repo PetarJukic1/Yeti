@@ -1,6 +1,6 @@
 package com.example.yeti.feature_yeti.domain.model
 
-import com.example.yeti.feature_yeti.presentation.constants.gameConstants
+import com.example.yeti.feature_yeti.presentation.constants.GameConstants
 import kotlin.math.max
 import kotlin.math.min
 
@@ -15,28 +15,28 @@ data class Player(
         x += velocity.x * secs
         y += velocity.y * secs
         velocity.x = max(
-            -gameConstants.MAX_X_VELOCITY,
+            -GameConstants.MAX_X_VELOCITY,
             min(
-                gameConstants.MAX_X_VELOCITY,
+                GameConstants.MAX_X_VELOCITY,
                 (velocity.x + (acceleration.x * secs))
             )
         )
         velocity.y = max(
             0f,
             min(
-                gameConstants.MAX_Y_VELOCITY,
+                GameConstants.MAX_Y_VELOCITY,
                 (velocity.y + (acceleration.y * secs))
             )
         )
-        when (direction) {
+        acceleration = when (direction) {
             Direction.DOWN -> {
-                acceleration = gameConstants.DOWN_ACCELERATION
+                GameConstants.DOWN_ACCELERATION
             }
             Direction.LEFT -> {
-                acceleration = gameConstants.LEFT_ACCELERATION
+                GameConstants.LEFT_ACCELERATION
             }
             Direction.RIGHT -> {
-                acceleration = gameConstants.RIGHT_ACCELERATION
+                GameConstants.RIGHT_ACCELERATION
             }
         }
 
