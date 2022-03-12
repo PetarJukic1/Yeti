@@ -20,7 +20,6 @@ class GameViewModel : ViewModel() {
     var gamemap = _gameMap
 
     suspend fun startUpdate() {
-        //update ui
     }
 
 }
